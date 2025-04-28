@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("a",
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                          policy.WithOrigins("http://localhost:4200", "https://task-angular--flame.vercel.app").AllowAnyMethod().AllowAnyHeader();
                       });
 });
 

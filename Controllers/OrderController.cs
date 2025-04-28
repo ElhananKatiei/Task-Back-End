@@ -8,5 +8,9 @@ namespace task.Controllers;
 public class OrderController : ControllerBase
 {
     [HttpPost]
-    public ActionResult<bool> AddNewOrder([FromBody] NewOrder newOrder) => OrderService.AddNewOrder(newOrder);
+    public ActionResult<Manager?> AddNewOrder([FromBody] NewOrder newOrder)
+    {
+        OrderService.AddNewOrder(newOrder);
+        return ManagerServise.GetManagerById(newOrder.IdManager);
+    }
 }

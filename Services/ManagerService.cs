@@ -24,6 +24,11 @@ public static class ManagerServise
         return Managers;
     }
 
+    public static Manager? GetManagerById(int idManager)
+    {
+        return Managers.Find(m => m.Id == idManager);
+    }
+
     public static string AddOrder(int idManager, Order order)
     {
         Manager? manager = Managers.Find(m => m.Id == idManager);
